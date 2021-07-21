@@ -18,18 +18,33 @@ var stuff = [
 // }
 // });
 
-var removeItem = function (array, item) {
-  var index = array.indexOf(item);
+// var removeItem = function (array, item) {
+//  var index = array.indexOf(item);
 
-  if (index === -1) {
-    console.log("No such element exists in the array.");
-  } else {
-    console.log(`Removing ${item}`);
-    array.splice(index, 1);
+//  if (index === -1) {
+//    console.log("No such element exists in the array.");
+//  } else {
+//   console.log(`Removing ${item}`);
+//  array.splice(index, 1);
+// }
+// };
+
+// removeItem(stuff, "books");
+// console.log(stuff);
+// removeItem(stuff, "cats");
+// console.log(stuff);
+
+// Using 'Filter'
+var filyerStuff = stuff.filgter(function (item) {
+  return item.included("s");
+});
+console.log(filyerStuff);
+
+// Using an empty array and a for loop
+var newArray = [];
+for (var item of stuff) {
+  if (item.includes("s")) {
+    newArray.push(item);
   }
-};
-
-removeItem(stuff, "books");
-console.log(stuff);
-removeItem(stuff, "cats");
-console.log(stuff);
+}
+console.log(newArray);
